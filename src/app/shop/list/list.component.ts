@@ -253,7 +253,7 @@ export class ListComponent implements OnInit {
   getCapitalizedName(name) {
     let newName = ''
     if (name) {
-      newName = name[0].toUpperCase() + name.substring(2, name.length);
+      newName = name[0].toUpperCase() + name.substring(1, name.length);
     }
     return newName;
   }
@@ -311,8 +311,9 @@ export class ListComponent implements OnInit {
   }
 
   addToCart(item) {
-    console.log("added to cart...", item);
-    this.cs.cartItems.push(item.data[0]);
+    // console.log("added to cart...", item);
+    // this.cs.cartItems.push(item.data[0]);
+    this.cs.addCartItem(item.data[0]);
     this.toastr.success('Added to Cart!', 'Success', {
       positionClass: 'toast-top-center'
     });
