@@ -1,0 +1,72 @@
+::ng-deep .mat-dialog-container {
+    padding: 0 !important
+}
+
+::ng-deep .product-detail .mat-dialog-title {
+    padding: 20px 20px 10px 20px;
+    background-color: #c17925;
+    text-align: center;
+    .product-name {
+        color: #f1c905;
+        font-family: Montserrat;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .buy-sell {
+        color: #fffbf7;
+        font-size: 12px;
+        font-family: Montserrat;
+        font-weight: 500;
+    }
+}
+
+::ng-deep .product-detail .mat-dialog-content {
+    margin: 0;
+    padding: 0 20px 20px 20px;
+    h4 {
+        font-weight: bold;
+        font-size: initial!important;
+    }
+    div {
+        font-size: initial!important;
+    }
+    .color-chip {
+        text-align: center;
+        padding: 8px;
+        margin: 4px;
+        margin-left: 0px;
+        font-family: monospace;
+        font-size: 13px;
+        border-radius: 8px;
+        background-color: rgb(196, 188, 164);
+        color: black;
+    }
+    .add-cart {
+        cursor: pointer;
+        width: 45px;
+        margin-top: -10px;
+    }
+    .sub-item-image {
+        width: 45px;
+        box-sizing: border-box;
+        border-radius: 6px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+    .sub-item-image:hover {
+        background-color: #b5b776;
+    }
+}
+
+.dialog-title-image {
+    max-width: 128px;
+    background-color: #eaeac2;
+    margin: 8px;
+    border-radius: 8px;
+    margin-right: 16px;
+    align-self: center;
+}
+
+::ng-deep .toast-container {
+    margin-top: 10px;
+}

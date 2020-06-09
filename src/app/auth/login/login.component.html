@@ -1,0 +1,21 @@
+<div class="row" style="margin-top: 70px; margin-right: 0 !important;">
+    <img src="./assets/images/welcome.png" style="width: 200px;margin: auto;">
+</div>
+<div class="row" style="margin-right: 0 !important;">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12">
+        <div class="password-wrapper">
+            <input type="password" class="form-control" style="border:2px #6b5c43 solid" placeholder="PASSWORD" [(ngModel)]="password" (keydown)="onKeydown($event)" [disabled]="isLoadding">
+        </div>
+        <div class="progress-wrapper">
+            <mat-progress-bar mode="indeterminate" color="warn" *ngIf="isLoadding"></mat-progress-bar>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-right: 0 !important; margin-top: 20px;">
+    <div class="social-wrapper" style="margin: auto;">
+        <img src="./assets/images/twitter.png" style="width: 50px;">
+        <img src="./assets/images/discord_icon.png" style="width: 50px; margin-left: 5px;">
+    </div>
+</div>

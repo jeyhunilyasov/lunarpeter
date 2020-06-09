@@ -1,0 +1,35 @@
+.tab-nav {
+    padding: 0
+}
+
+.tab-nav-item {
+    padding: 1rem
+}
+
+.account-box {
+    margin-right: 4px;
+    display: flex;
+    background-color: #fff1cc;
+    padding: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: #6b5c43;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-decoration: none;
+    font-family: Montserrat;
+    font-size: 24px;
+}
+
+::ng-deep .mat-badge-medium.mat-badge-after .mat-badge-content {
+    right: -17px;
+}
+
+::ng-deep .mat-badge-medium.mat-badge-above .mat-badge-content {
+    top: -8px;
+}

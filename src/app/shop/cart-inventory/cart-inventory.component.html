@@ -1,0 +1,32 @@
+<div mat-dialog-content style="height: 100%; overflow: hidden;">
+    <div class="row" style="margin-top: 3%; height: 92%;margin-right: 0;margin-left: 0;">
+        <div class="cart-pagination">
+            <img *ngIf="currentPageIndex === 1" src="/assets/images/left.png " width="100%" style="opacity: 0.4;">
+            <img *ngIf="currentPageIndex !== 1" src="/assets/images/left.png " width="100%" style="cursor: pointer;" (click)="gotoPreviousPage()">
+        </div>
+        <div class="" style="width: 90%; flex-wrap: wrap;margin-top: 5%;" *ngIf="cs.cartItems.length > 0">
+            <!-- <div *ngFor="let item of cs.cartItems " style="width: 10%;"> -->
+            <img src="{{item.Image || 'https://acnhcdn.com/latest/MenuIcon/Cardboard.png'}}" *ngFor="let item of currentData" style="width: 10%;">
+            <!-- </div> -->
+        </div>
+        <div class="empty-cart-wrapper" *ngIf="cs.cartItems.length === 0">
+            Cart is empty.
+        </div>
+        <div class="cart-pagination">
+            <img *ngIf="!isNextAvailable" src="/assets/images/right.png " width="100%" style="opacity: 0.4;">
+            <img *ngIf="isNextAvailable" src="/assets/images/right.png " width="100%" style="cursor: pointer;" (click)="gotoNextPage()">
+        </div>
+        <!-- <div *ngFor="let item of cs.cartItems " style="width: 10%; ">
+            <img src="{{item.Image}} " width="100% ">
+        </div> -->
+    </div>
+    <div class="row" style="justify-content: center;" *ngIf="cs.cartItems.length > 0">
+        <button mat-raised-button (click)="onNoClick()" color="primary" (click)="gotoCheckout()">
+          Check Out
+        </button>
+        <button mat-raised-button color="accent" (click)="emptyCart()" style="margin-left: 5px;">
+          Empty Cart
+        </button>
+        <div class="total_amount">${{totalPrice}}</div>
+    </div>
+</div>

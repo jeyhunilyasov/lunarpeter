@@ -1,0 +1,61 @@
+<div mat-dialog-title class="checkout-header">
+    <h5>Checkout</h5>
+</div>
+<div class="checkout-body container" style="padding-bottom: 20px;padding-top: 10px;">
+    <div class="row">
+        <mat-progress-bar mode="indeterminate" color="warn" *ngIf="isLoading"></mat-progress-bar>
+    </div>
+    <div class="row" *ngIf="!isLoading">
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
+            <img src="./assets/images/discord.png" width="100%">
+        </div>
+        <div class="col-sm-8 cold-md-8 col-lg-8 col-xs-12">
+            <input type="text" class="form-control" width="100%" style="color: #6b5c43;font-weight: 700;" name="discordName" placeholder="USERNAME       # 0000" [(ngModel)]="discordName">
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;" *ngIf="!isLoading && !isPaymentClicked">
+        <div class="col-md-6" *ngFor="let pNum of valueArr">
+            <div *ngIf="pNum !== totalPackage - 1" class="package-wrapper-big">
+                <span>40</span>
+            </div>
+            <div *ngIf="pNum === totalPackage - 1" class="package-wrapper-big">
+                <span>{{finalAmount}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;" *ngIf="!isLoading && isPaymentClicked">
+        <div class="col-md-4" *ngFor="let pNum of valueArr">
+            <div *ngIf="pNum !== totalPackage - 1" class="package-wrapper">
+                <span>40</span>
+            </div>
+            <div *ngIf="pNum === totalPackage - 1" class="package-wrapper">
+                <span>{{finalAmount}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px; margin-left:0" *ngIf="!isLoading">
+        <img src="./assets/images/paypal.png" width="24%" class="payment-img" (click)="viewPaymentDescription('paypal')">
+        <img src="./assets/images/apple.jpg" width="24%" class="payment-img" (click)="viewPaymentDescription('apple')">
+        <img src="./assets/images/google.png" width="24%" class="payment-img" (click)="viewPaymentDescription('google')">
+        <img src="./assets/images/bitcoin.png" width="24%" class="payment-img" (click)="viewPaymentDescription('bitcoin')">
+    </div>
+    <div class="row" style="margin-top: 20px;margin-top: 20px;padding-left: 16px;padding-right: 10px;" *ngIf="isPaymentClicked">
+        <div class="col-md-12" style="background-color:#fff1cc">
+            {{selectedTerms}}
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;" *ngIf="!isLoading">
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
+            <div class="total_amount">${{totalPrice}}</div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-12 order_button_wrapper">
+            <button class="order-btn" (click)="placeOrder()" [disabled]="isOrderLoading">
+        <span class="spinner-border spinner-border-sm text-success" *ngIf="isOrderLoading"></span><span
+          *ngIf="isOrderLoading">Ordering...</span>
+        <span *ngIf="!isOrderLoading">Place Order</span>
+      </button>
+        </div>
+    </div>
+</div>

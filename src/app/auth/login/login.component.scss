@@ -1,0 +1,17 @@
+.password-wrapper {
+    background-color: #EEE2CB;
+    border-radius: 15px;
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.progress-wrapper {
+    padding-top: 5px;
+    width: 80%;
+    margin: auto;
+}
+
+::ng-deep .toast-container {
+    margin-top: 10px !important;
+}

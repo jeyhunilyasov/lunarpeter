@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row ">
+        <div class="col-4"></div>
+        <div class="col-4 text-center">
+            <img src="./assets/images/welcome.png" style="width: 125px; padding-top: 10px;">
+        </div>
+        <div class="col-4" style="position: fixed;right: 10%;z-index: 9999;top: 3%">
+            <span matBadge="{{cs.cartItems.length}}" matBadgeOverlap="false" matBadgeColor="accent" style="float: right;margin-top: 20px; cursor: pointer;" (click)="cartClicked()">
+            <!-- <i class="fa fa-sign-out" aria-hidden="true"></i> -->
+              <img src="./assets/images/Icons/CartEmpty.png" width="55px" style="margin-top: -5px;"></span>
+        </div>
+    </div>
+    <div class="row nav-tab">
+        <a routerLink="/shop/list" class="account-box">
+            <div>Items</div>
+        </a>
+        <a routerLink="/bundles" class="account-box">
+            <div>Bundles</div>
+        </a>
+    </div>
+    <router-outlet></router-outlet>
+</div>
